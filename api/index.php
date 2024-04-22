@@ -1,11 +1,17 @@
 <?php
 
+require_once '../database/seeders/DatabaseSeeder.php';
 require_once '../controllers/CategoryController.php';
 require_once '../controllers/CourseController.php';
 
 establishConnection();
 registerHeaders();
 registerRoutes();
+
+/**
+ * Uncomment the following line to seed mock data
+ */
+// DatabaseSeeder::seed();
 
 /**
  * establish DB connection
@@ -61,7 +67,7 @@ function registerRoutes()
             $categories = $categoryController->getCategories();
             echo json_encode($categories);
         }
-    } 
+    }
     // course endpoints
     elseif ($uri[1] === "courses") {
         $courseController = new CourseController();
