@@ -29,7 +29,7 @@ class Category implements Model
      */
     public static function get()
     {
-        $query = "SELECT categories.id, categories.name, categories.parent_id, COUNT(courses.id) AS count_of_courses, categories.created_at, categories.updated_at
+        $query = "SELECT categories.id, categories.name, categories.parent_id, COUNT(courses.course_id) AS count_of_courses, categories.created_at, categories.updated_at
             FROM categories
             LEFT JOIN courses ON categories.id = courses.category_id
             GROUP BY categories.id";
@@ -38,16 +38,16 @@ class Category implements Model
         $statement->execute();
         $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $categoryList = [];
+        $categoriesList = [];
         foreach ($categories as $category) {
-            array_push($categoryList, new Category($category));
+            array_push($categoriesList, new Category($category));
         }
 
-        if(empty($categoryList)){
+        if(empty($categoriesList)){
             throw new \Exception('No categories found.');
         }
 
-        return $categoryList;
+        return $categoriesList;
     }
     
     /**
@@ -59,7 +59,7 @@ class Category implements Model
      */
     public static function find($id)
     {
-        $query = "SELECT categories.id, categories.name, categories.parent_id, COUNT(courses.id) AS count_of_courses, categories.created_at, categories.updated_at
+        $query = "SELECT categories.id, categories.name, categories.parent_id, COUNT(courses.course_id) AS count_of_courses, categories.created_at, categories.updated_at
             FROM categories
             LEFT JOIN courses ON categories.id = courses.category_id
             WHERE categories.id='$id'
