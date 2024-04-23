@@ -30,6 +30,18 @@
 docker-compose up --build
 ```
 
+## How to run migrations:
+in **index.php**, you can comment out the following lines to migrate tables and seed mock data
+```php
+// DatabaseSeeder::migrate();
+// DatabaseSeeder::seed();
+```
+
+## Known issues
+- There is an issue with the **Traefik** reverse proxy where it doesn't work with the API endpoints.
+    for example, the endpoint `http://api.cc.localhost/categories` will return 404 error, but this should be fixed with the correct **Traefik** configuration in docker-compose.yml
+
+
 ## Hosts:
 API host: http://api.cc.localhost
 
