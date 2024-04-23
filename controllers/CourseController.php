@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/Course.php';
-require_once '../database.php';
+require_once './models/Course.php';
+require_once './database.php';
 
 class CourseController
 {

@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/Category.php';
-require_once '../database.php';
+require_once './models/Category.php';
+require_once './database.php';
 
 class CategoryController
 {    
