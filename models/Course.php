@@ -6,6 +6,7 @@ class Course
     public $name;
     public $description;
     public $category_id;
+    public $category_name;
     public $preview;
     public $created_at;
     public $updated_at;
@@ -16,6 +17,7 @@ class Course
         $this->name = $data['title'];
         $this->description = $data['description'];
         $this->category_id = $data['category_id'];
+        $this->category_name = $data['category_name'];
         $this->preview = $data['image_preview'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
@@ -30,7 +32,7 @@ class Course
      */
     public static function get()
     {
-        $query = "SELECT courses.course_id, courses.category_id, courses.title, courses.description, courses.image_preview, categories.name, courses.created_at, courses.updated_at
+        $query = "SELECT courses.course_id, courses.category_id, courses.title, courses.description, courses.image_preview, categories.name as category_name, courses.created_at, courses.updated_at
             FROM courses
             LEFT JOIN categories ON courses.category_id = categories.id
             GROUP BY courses.course_id";
