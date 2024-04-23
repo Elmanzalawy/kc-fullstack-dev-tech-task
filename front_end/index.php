@@ -1,10 +1,16 @@
 <?php
-require_once '../database.php';
-require_once '../models/Category.php';
-require_once '../models/Course.php';
+require_once './database.php';
+require_once './models/Category.php';
+require_once './models/Course.php';
+require_once './database/seeders/DatabaseSeeder.php';
 
 $database = new Database();
 $db_connection = $database->getConnection();
+/**
+ * Uncomment the following line to seed mock data
+ */
+// DatabaseSeeder::migrate();
+// DatabaseSeeder::seed();
 
 $categories = Category::get();
 $GLOBALS['categories'] = $categories;

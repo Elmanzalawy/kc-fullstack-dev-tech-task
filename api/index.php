@@ -1,16 +1,16 @@
 <?php
 
-require_once '../database/seeders/DatabaseSeeder.php';
-require_once '../controllers/CategoryController.php';
-require_once '../controllers/CourseController.php';
+require_once './database/seeders/DatabaseSeeder.php';
+require_once './controllers/CategoryController.php';
+require_once './controllers/CourseController.php';
 
 establishConnection();
-registerHeaders();
 registerRoutes();
 
 /**
  * Uncomment the following line to seed mock data
  */
+// DatabaseSeeder::migrate();
 // DatabaseSeeder::seed();
 
 /**
@@ -22,18 +22,6 @@ function establishConnection()
 {
     $database = new Database();
     $GLOBALS['db_connection'] = $database->getConnection();
-}
-
-/**
- * register HTTP response headers for API
- *
- * @return void
- */
-function registerHeaders()
-{
-    header("Content-Type: application/json; charset=UTF-8");
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: GET");
 }
 
 /**

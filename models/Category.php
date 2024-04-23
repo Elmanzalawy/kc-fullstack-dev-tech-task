@@ -2,6 +2,7 @@
 
 require_once 'Model.php';
 
+#[\AllowDynamicProperties]
 class Category implements Model
 {
     public $id;
