@@ -35,10 +35,17 @@ services:
   api:
     image: php:8.3-apache
     container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
     depends_on:
       - db
     volumes:
-      - ./api/:/var/www/html/
+      - ./api/:/var/www/html
+      - './database.php:/var/www/html/database.php'
+      - './database:/var/www/html/database/'
+      - './controllers:/var/www/html/controllers/'
+      - './models:/var/www/html/models/'
     stdin_open: true
     tty: true
     hostname: api.cc.localhost
@@ -48,11 +55,16 @@ services:
     image: php:8.3-apache
     container_name: front
     depends_on:
-      - api
+      - db
     volumes:
       - ./front_end/:/var/www/html/
+      - './database.php:/var/www/html/database.php'
+      - './database:/var/www/html/database/'
+      - './controllers:/var/www/html/controllers/'
+      - './models:/var/www/html/models/'
+      - './data:/var/www/html/data/'
     stdin_open: true
     tty: true
-    hostname: api.cc.localhost
+    hostname: cc.localhost
     labels:
       - traefik.http.routers.front.rule=Host(`cc.localhost`)
