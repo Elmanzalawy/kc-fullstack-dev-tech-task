@@ -1,141 +1,141 @@
-body {
-    font-family: sans-serif;
-    background-color: rgb(193, 193, 193);
-}
+    body {
+        font-family: sans-serif;
+        background-color: rgb(193, 193, 193);
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: system-ui, sans-serif;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: system-ui, sans-serif;
+    }
 
-a{
-    text-decoration: none;
-    color: black;
-}
+    a{
+        text-decoration: none;
+        color: black;
+    }
 
-#app {
-    padding: 1rem;
-}
+    #app {
+        padding: 1rem;
+    }
 
-#title-header{
-    padding-bottom: 1rem;
-}
+    #title-header{
+        padding-bottom: 1rem;
+    }
 
-.flex-container{
-    display: flex;
-    /* flex-direction: row-reverse; */
-}
+    .flex-container{
+        display: flex;
+        /* flex-direction: row-reverse; */
+    }
 
-aside{
-    position: fixed;
-    left: 1rem;
-    width: 20rem;
-}
+    aside{
+        position: fixed;
+        left: 1rem;
+        width: 20rem;
+    }
 
-aside details{
-    margin-top: 1rem;
-}
+    aside details{
+        margin-top: 1rem;
+    }
 
-aside a{
-    font-weight: bold;
-}
+    aside a{
+        font-weight: bold;
+    }
 
-main{
-    margin-left: 20rem;
-    position: relative;
-}
+    main{
+        margin-left: 20rem;
+        position: relative;
+    }
 
-summary {
-    user-select: none;
-}
+    summary {
+        user-select: none;
+    }
 
-#course-catalog {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-gap: 1rem;
-}
-
-.card {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    border-radius: 1rem;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-}
-
-.card-body{
-    position: relative;
-    padding: 0.5rem 1rem;
-}
-
-.card-body h3{
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card-body p{
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card img {
-    width: 100%;
-    object-fit: contain;
-    overflow: hidden;
-    border-radius: 1rem;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    -webkit-user-drag: none;
-}
-
-.card .category-label{
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: white;
-    opacity: 0.8;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    box-shadow: 1px;
-    font-weight: bold;
-    user-select: none;
-}
-
-#courses-not-found-message{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-}
-
-/* Large devices such as laptops (1024px and up) */
-@media only screen and (max-width: 68em) {
     #course-catalog {
         position: relative;
         display: grid;
-        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
         grid-gap: 1rem;
     }
 
+    .card {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+
+    .card-body{
+        position: relative;
+        padding: 0.5rem 1rem;
+    }
+
     .card-body h3{
-        overflow: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .card-body p{
-        overflow: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-}
+
+    .card img {
+        width: 100%;
+        object-fit: contain;
+        overflow: hidden;
+        border-radius: 1rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        -webkit-user-drag: none;
+    }
+
+    .card .category-label{
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background-color: white;
+        opacity: 0.8;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: 1px;
+        font-weight: bold;
+        user-select: none;
+    }
+
+    #courses-not-found-message{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+    }
+
+    /* Large devices such as laptops (1024px and up) */
+    @media only screen and (max-width: 68em) {
+        #course-catalog {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(1, minmax(200px, 1fr));
+            grid-gap: 1rem;
+        }
+
+        .card-body h3{
+            overflow: initial;
+        }
+
+        .card-body p{
+            overflow: initial;
+        }
+    }

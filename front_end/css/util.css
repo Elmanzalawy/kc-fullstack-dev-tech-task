@@ -1,12 +1,12 @@
-.align-center {
-    text-align: center;
-}
+    .align-center {
+        text-align: center;
+    }
 
-.badge {
-    background-color: deepskyblue;
-    color: white;
-    font-weight: bold;
-    padding: 0.25rem 0.5rem;
-    border-radius: 50%;
-    margin-left: 0.5rem;
-}
+    .badge {
+        background-color: deepskyblue;
+        color: white;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        border-radius: 50%;
+        margin-left: 0.5rem;
+    }
